@@ -1,26 +1,22 @@
 # shopping-list-ui
 
-- Should use ExpressJS
-- Should include an Open API yaml file in the source tree, describing the AP
-- Should listen on port 5000
-- Should expose an `addShoppingListItem` endpoint
-    * Should expose at POST /shopping-list-items
-    * Should accept a request body that includes `name`, `price`, `quantity`
-    * Should return a 200 and the newly created entity with an id when valid input provided
-    * Should return a 400 and a `{"status": 400, "message": "Invalid input" }` response when any of the required fields are not provided
-    * Should return 403 and a `{"status": 400, "message": "Invalid input" }` response when invalid, or no API key provided
-- Should expose an `updateShoppingListItem` endpoint
-    * Should expose at PUT /shopping-list-items/:id
-    * Should accept a request body that includes `name`, `price`, `quantity`
-    * Should return a 200 and the updated created entity with an id when valid input provided
-    * Should return a 400 and a `{"status": 400, "message": "Invalid input" }` response when any of the required fields are not provided
-    * Should return 403 and a `{"status": 400, "message": "Invalid input" }` response when invalid, or no API key provided
-- Should expose a `removeShoppingListItem` endpoint
-    * Should expose at DELETE /shopping-list-items/:id
-    * Should accept a request body that includes name, price, quantity
-    * Should return a 200 status code, no response when the delete succeeds
-    * Should return 403 and a `{"status": 400, "message": "Invalid input" }` response when invalid, or no API key provided
-- Should expose a `listShoppingListItems` endpoint
-    * Should expose at GET /shopping-list-items endpoint
-    * Should return a 200 status code, and the list of shopping list items
-    * Should return 403 and a `{"status": 400, "message": "Invalid input" }` response when invalid, or no API key provided
+- Should use `React` & `NextJS`
+- Should run on port 3001
+- Should send a valid API Key for all API Requests
+- Should create "shopping-list" page
+  * Should fetch shopping list items from the shopping-list-api via `axios`
+  * Should display list of shopping list items
+  * Should have a "Remove" button, when clicked, should remove item from list and refreshes the 
+  * Should have a "Edit" button, when clicked, should take me to the "update-shopping-list-item" page
+  * Should have an "Add" button, when clicked, should take me to the "add-shopping-list-item" page
+- Should create "add-shopping-list-item" page
+	- Should create a shopping list item using the shopping-list-api via `axios`
+	- Should display an error when a non 400 series status code comes back
+- Should create "add-shopping-list-item" page
+	- Should create a shopping list item using the shopping-list-api via `axios`
+	- Should display an error when a 400 series status code comes back
+	- Should take me to the "shopping-list" page when it completes successfully
+- Should create "update-shopping-list-item" page
+	- Should update a shopping list item using the shopping-list-api via `axios`
+	- Should display an error when a 400 series status code comes back
+	- Should take me to the "shopping-list" page when it completes successfully
