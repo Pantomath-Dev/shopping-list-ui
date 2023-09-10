@@ -3,11 +3,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ShoppingListItem } from '../interfaces';
 
-const EditItemPage = () => {
+const AddItemPage = () => {
   const router = useRouter();
   const { data } = router.query;
 
-  const [item, setItem] = useState<ShoppingListItem>({ id: 0, name: '', price: 0, quantity: 0 });
+  const [item, setItem] = useState<ShoppingListItem>({ name: '', price: 0, quantity: 0 });
 
   useEffect(() => {
     if (data) {
@@ -31,14 +31,8 @@ const EditItemPage = () => {
           'api_key': apiKey,
         },
       };
-
-      let updateObject: ShoppingListItem = {
-        name: item.name,
-        price: item.price,
-        quantity: item.quantity
-      };
   
-      await axios.put(`http://localhost:5000/shopping-list-items/${item.id}`, updateObject, config);
+      await axios.post(`http://localhost:5000/shopping-list-items/`, item, config);
 
       router.push('/');
     } catch (error) {
@@ -48,11 +42,11 @@ const EditItemPage = () => {
 
   return (
     <div>
-      <h1>Edit Item</h1>
+      <h1>Add Item</h1>
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" value={item.name} onChange={handleInputChange} />
+          <input type="text" id="name" name="name" value={item.name} onChange={handleInputChange} placeholder="Milk"/>
         </div>
         <div>
           <label htmlFor="price">Price:</label>
@@ -68,4 +62,4 @@ const EditItemPage = () => {
   );
 };
 
-export default EditItemPage;
+export default AddItemPage;

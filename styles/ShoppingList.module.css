@@ -7,11 +7,11 @@
 }
 
 .button {
-    background-color: #007BFF; /* Button background color */
-    color: #fff; /* Text color */
+    background-color: #007BFF;
+    color: #fff;
     border: none;
-    padding: 10px 20px; /* Adjust padding to your liking */
-    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px;
+    border-radius: 5px; 
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     margin-right: 10px;

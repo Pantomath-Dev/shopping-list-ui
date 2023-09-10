@@ -5,7 +5,7 @@
 // import { User } from 'path/to/interfaces';
 
 export type ShoppingListItem = {
-  id: number
+  id?: number
   name: string
   price: number
   quantity: number
