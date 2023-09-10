@@ -1,0 +1,18 @@
+.box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+.button {
+    background-color: #007BFF; /* Button background color */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 10px 20px; /* Adjust padding to your liking */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+}  
